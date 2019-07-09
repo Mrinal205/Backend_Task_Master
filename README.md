@@ -1,2 +1,6 @@
-# Backend_Task_Master
-Backend Task Master
+
+
+#### Application for running Task Processes. ####
+
+Generally task processes are those type of processes which run periodically. 
+
