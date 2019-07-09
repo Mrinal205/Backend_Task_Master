@@ -1,0 +1,4 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Sat Nov 10 08:54:12 MST 2018
+backend-system-server-0.0.2-SNAPSHOT.jar>=
+backend-system-server-0.0.2-SNAPSHOT.pom>=

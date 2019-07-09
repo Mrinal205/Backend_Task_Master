@@ -1,0 +1,41 @@
+image: java:10
+
+stages:
+  - build
+  - test
+  - deploy
+
+maven-build:
+  stage: build
+  image: maven:3-jdk-10
+  script: mvn package -DskipTests
+
+maven-test:
+  stage: test
+  image: maven:3-jdk-10
+  script: mvn package -P gitlab
+  except:
+  - develop
+  - production
+
+deploy-heroku-test:
+  image: ruby:2.2
+  stage: deploy
+  only:
+    - develop
+  script:
+    - apt-get update -yq
+    - apt-get install rubygems ruby-dev -y
+    - gem install dpl
+    - dpl --provider=heroku --app=test-task-moonassist --api-key=$HEROKU_API_KEY_PROD
+
+deploy-heroku-production:
+  image: ruby:2.2
+  stage: deploy
+  only:
+    - master
+  script:
+    - apt-get update -yq
+    - apt-get install rubygems ruby-dev -y
+    - gem install dpl
+    - dpl --provider=heroku --app=moonassist-task-production --api-key=$HEROKU_API_KEY_PROD

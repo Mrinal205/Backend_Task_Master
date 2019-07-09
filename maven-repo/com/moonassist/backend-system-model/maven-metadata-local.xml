@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>com.moonassist</groupId>
+  <artifactId>backend-system-model</artifactId>
+  <versioning>
+    <versions>
+      <version>0.0.2-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20181110155406</lastUpdated>
+  </versioning>
+</metadata>
